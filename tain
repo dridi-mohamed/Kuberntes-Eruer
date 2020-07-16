@@ -1,0 +1,19 @@
+ Message
+  ----     ------            ----       ----               -------
+ Warning  FailedScheduling  <unknown>  default-scheduler  0/2 nodes are available: 2 node(s) had taints that the pod didn't tolerate
+ 
+ # check statue
+ kubectl get nodes
+ 
+ # Remove Tain master + Nodes
+ 
+ kubectl taint nodes  <name-cluster-old> node-role.kubernetes.io/master-
+ kubectl taint nodes  <name-cluster-new> node-role.kubernetes.io/master-
+
+# One Node "Master"
+kubectl get Pods
+minkube
+
+ kubectl taint nodes  minkube node-role.kubernetes.io/master-
+ 
+ 
